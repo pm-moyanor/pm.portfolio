@@ -55,7 +55,7 @@ function Projects({ getRandomColor }) {
         "This project was created in collaboration for the Hackathon for Social Good 2023. It provides interactive access to crime data",
       image: "crimemappro-screenshot.png",
       githubLink: "https://github.com/pm-moyanor/wwwcode-hackaton-crimelocator",
-      demoLink: "https://litton-ecommerce.netlify.app/layout",
+      demoLink: "https://github.com/pm-moyanor",
     },
     {
       id: "game",

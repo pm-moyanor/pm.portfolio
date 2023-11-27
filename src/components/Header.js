@@ -10,7 +10,7 @@ const Header = ({ pages, scrollToSection }) => {
   };
 
   return (
-    <nav className="bg-customBlack text-slate-300 py-6 h-18 flex justify-center items-center w-full p-2">
+    <nav className=" fixed top-0 right-0 bg-customBlack text-slate-300 py-6 h-18 flex justify-center items-center w-full p-2">
       <div className="container flex items-center justify-between mx-2 w-full lg:w-fit">
         {/* large screen */}
         <ul className=" hidden sm:hidden lg:flex items-center justify-center space-x-8 lg:space-x-12">
