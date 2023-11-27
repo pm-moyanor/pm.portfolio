@@ -12,6 +12,7 @@ function ProjectCard({
   id,
   expanded,
 }) {
+  const [isAnimating, setIsAnimating] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
   const [showGif, setShowGif] = useState(false);
   const [overlayColor, setOverlayColor] = useState("");
@@ -33,6 +34,15 @@ function ProjectCard({
       setOverlayColor("");
     };
   }, [memoizedGetColorCallback]);
+  
+
+  useEffect(() => {
+    const animationTimeout = setTimeout(() => {
+      setIsAnimating(false);
+    }, 2000);
+
+    return () => clearTimeout(animationTimeout);
+  }, []);
 
   useEffect(() => {
     setShowGif(expanded);
@@ -64,8 +74,14 @@ function ProjectCard({
 
       <div
         className="absolute top-0 left-0 items-start justify-start rounded-lg z-10 w-full h-full"
-        onMouseEnter={() => setIsHovered((prevIsHovered) => !prevIsHovered)}
-        onMouseLeave={() => setIsHovered((prevIsHovered) => !prevIsHovered)}
+        onMouseEnter={() => {
+          if (!isAnimating) {
+            setIsHovered(true);
+          }
+        }}
+        onMouseLeave={() => {
+          setIsHovered(false);
+        }}
       >
         <div className="absolute top-0 left-0 w-full h-full bg-customBlack opacity-20 z-50 rounded-sm"></div>
 

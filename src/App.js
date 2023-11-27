@@ -1,6 +1,5 @@
 // App.js
-import React, { useState, useEffect, useRef } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Dot from "./components/Dot.js";
 import Header from "./components/Header";
@@ -8,7 +7,7 @@ import AboutMe from "./components/AboutMe";
 import TechStack from "./components/TechStack";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 const getRandomColor = () => {
@@ -35,23 +34,35 @@ const pages = [
   { id: "contact", component: <Contact /> },
 ];
 
-const wrapperVariants = {
-  initial: {
-    clipPath: "polygon(0 0, 0 0, 100% 0, 100% 0)",
-    transition: { duration: 0.4 },
-  },
-  animate: {
-    clipPath: "polygon(0 0, 0 100%, 100% 100%, 100% 0)",
-    transition: { duration: 0.4, staggerChildren: 0.1 },
-  },
-  exit: {
-    clipPath: "polygon(0 100%, 0 100%, 100% 100%, 100% 100%)",
-    transition: { duration: 0.4 },
-  },
-};
 
 function App() {
   const scrollRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      {
+        threshold: 1,
+      }
+    );
+
+    if (scrollRef.current) {
+      observer.observe(scrollRef.current);
+    }
+
+    return () => {
+      if (scrollRef.current) {
+        observer.unobserve(scrollRef.current);
+      }
+    };
+  }, []);
 
   const scrollToSection = (targetId) => {
     const targetSection = document.querySelector(targetId);
@@ -72,14 +83,14 @@ function App() {
         ref={scrollRef}
         className="scroll-container min-h-screen h-screen w-full bg-customBlack snap-mandatory snap-y  overflow-scroll"
       >
-        {pages.map((page) => (
+        {pages.map((page,index) => (
           <motion.div
             id={page.id}
             key={page.id}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.5 }}
+            initial={isVisible ? { opacity: 0, y: 50 } : {}}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            exit={isVisible ? { opacity: 0, y: -50 } : {}}
+            transition={{ duration: 0.5, delay: isVisible ? index * 0.1 : 0 }}
             className="min-h-screen snap-start"
           >
             {page.component}

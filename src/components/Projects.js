@@ -94,10 +94,10 @@ function Projects({ getRandomColor }) {
   return (
     <section
       id="projects"
-      className="flex flex-col min-h-screen items-end justify-center pt-10 m-8"
+      className="flex flex-col min-h-screen items-end justify-center pt-4 m-8"
     >
       <div className="w-full mb-2 md:mb-8 lg:mb-0">
-        <h1 className="whitespace-nowrap h-fit self-start text-[5rem] sm:text-[5rem] md:text-[8rem] lg:text-[10rem] text-end tracking-tighter pb-4 leading-none font-body font-extrabold">
+        <h1 className="whitespace-nowrap h-fit self-start text-[5rem] sm:text-[5rem] md:text-[8rem] lg:text-[10rem] text-end tracking-tighter pb-6 leading-none font-body font-extrabold">
           Projects .
         </h1>
       </div>
