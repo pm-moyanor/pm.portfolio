@@ -1,7 +1,6 @@
 // App.js
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
-import Dot from "./components/Dot.js";
 import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
 import TechStack from "./components/TechStack";
@@ -53,16 +52,19 @@ function App() {
       }
     );
 
-    if (scrollRef.current) {
-      observer.observe(scrollRef.current);
-    }
 
+    const currentRef = scrollRef.current; 
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+  
     return () => {
-      if (scrollRef.current) {
-        observer.unobserve(scrollRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
-  }, []);
+  }, [scrollRef]);
 
   const scrollToSection = (targetId) => {
     const targetSection = document.querySelector(targetId);
