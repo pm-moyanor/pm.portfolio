@@ -10,7 +10,7 @@ const Header = ({ pages, scrollToSection }) => {
   };
 
   return (
-    <nav className=" fixed top-0 right-0 bg-customBlack text-slate-300 py-6 h-18 flex justify-center items-center w-full p-2">
+    <nav className=" bg-customBlack text-slate-300 py-6 h-18 flex justify-center items-center w-full p-2">
       <div className="container flex items-center justify-between mx-2 w-full lg:w-fit">
         {/* large screen */}
         <ul className=" hidden sm:hidden lg:flex items-center justify-center space-x-8 lg:space-x-12">
@@ -77,7 +77,7 @@ const Header = ({ pages, scrollToSection }) => {
                       scrollToSection(`#${page.id}`);
                       setIsOpen(!isOpen);
                     }}
-                    className="text-4xl py-2"
+                    className="text-3xl py-2"
                   >
                     {page.id.charAt(0).toUpperCase() + page.id.slice(1)}
                   </a>
@@ -90,7 +90,7 @@ const Header = ({ pages, scrollToSection }) => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.5 }}
                   >
-                    <FaGithub size={30} className="text-customRed mr-2" />
+                    <FaGithub size={26} className="text-customRed mr-2" />
                   </motion.a>
                   <motion.a
                     href="https://www.linkedin.com/in/paula-moyano-364babb4/"
@@ -98,7 +98,7 @@ const Header = ({ pages, scrollToSection }) => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.5 }}
                   >
-                    <FaLinkedin size={30} className="text-customRed mr-2" />
+                    <FaLinkedin size={26} className="text-customRed mr-2" />
                   </motion.a>
                 </div>
               </div>

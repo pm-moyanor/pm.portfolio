@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const AccordionItem = ({ project, expanded, toggleExpand, getRandomColor }) => {
   const isOpen = expanded === project.id;
@@ -10,7 +10,7 @@ const AccordionItem = ({ project, expanded, toggleExpand, getRandomColor }) => {
 
   return (
     <div
-      className={`relative overflow-y-auto rounded-lg m-px md:min-w-[500px] ${cardHeight} transition-all duration-300`}
+      className={`relative overflow-y-auto rounded-lg md:min-w-[500px] ${cardHeight} transition-all duration-300`}
       key={project.id}
       style={{overflow: `${isOpen ? "auto" : "hidden"}`}}
       onClick={() => toggleExpand(project.id)}
@@ -97,12 +97,12 @@ function Projects({ getRandomColor }) {
       className="flex flex-col min-h-screen items-end justify-center pt-4 m-8"
     >
       <div className="w-full mb-2 md:mb-8 lg:mb-0">
-        <h1 className="whitespace-nowrap h-fit self-start text-[5rem] sm:text-[5rem] md:text-[8rem] lg:text-[10rem] text-end tracking-tighter pb-6 leading-none font-body font-extrabold">
-          Projects .
+        <h1 className="whitespace-nowrap h-fit self-start text-[5rem] sm:text-[5rem] md:text-[8rem] lg:text-[9rem] text-end tracking-tighter pb-6 leading-none font-body font-extrabold">
+          Projects
         </h1>
       </div>
 
-      <div className="flex relative flex-col h-full justify-center w-full max-w-4xl">
+      <div className="flex relative flex-col h-full justify-center w-full max-w-5xl mt-2">
       {projects.map((project, index) => (
   <motion.div
     key={project.id}

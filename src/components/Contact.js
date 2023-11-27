@@ -63,8 +63,8 @@ function Contact() {
     className="flex flex-col items-center justify-center mx-2 sm:mx:2 md:mx-4 h-screen">
       
       <div className=" w-fit p-4 flex flex-col items-end mb-10">
-      <h1 className="w-full text-[5rem] sm:text-[5rem] md:text-[6rem] text-end tracking-tighter lg:text-[10rem] leading-none font-body font-extrabold ">
-          Contact.
+      <h1 className="w-full text-[5rem] sm:text-[5rem] md:text-[6rem] text-end tracking-tighter lg:text-[9rem] leading-none font-body font-extrabold ">
+          Contact
         </h1>
         <div className="flex flex-col justify-start items-end">
         <p className=" text-xs md:text-sm">

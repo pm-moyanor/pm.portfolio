@@ -30,8 +30,8 @@ const TechStack = ({ getRandomColor }) => {
     <section className="flex flex-col justify-center h-screen overflow-hidden w-full">
       <div className="flex justify-between items-end mr-8 ">
         <div className="w-full">
-          <h1 className="w-full text-[5rem] sm:text-[5rem] md:text-[8rem] text-end tracking-tighter lg:text-[10rem] leading-none font-body font-extrabold whitespace-break-spaces">
-            Tech Stack .
+          <h1 className="w-full text-[5rem] sm:text-[5rem] md:text-[8rem] text-end tracking-tighter lg:text-[9rem] leading-none font-body font-extrabold whitespace-break-spaces">
+            Tech Stack
           </h1>
           <div className="leading-tighter text-lg sm:text-lg md:text-2xl lg:text-3xl uppercase text-end text-gray-400">
             {techStackString.split(" ").map((word, index) => (
