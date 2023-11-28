@@ -135,10 +135,10 @@ function ProjectCard({
               className="absolute z-40 flex justify-start flex-col items-start p-4 h-full rounded-sm"
             >
               <div className="pb-4">
-                <h4 className="text-black leading-tight text-sm sm:text-sm md:text-lg lg:text-xl">
+                <h4 className="text-black leading-tight text-[1rem] sm:text-[0.9rem] md:text-[1rem] lg:text-[1.2rem]">
                   {label}
                 </h4>
-                <h3 className=" leading-none text-black text-[1.8rem] md:text-[3.5rem] font-extrabold mb-8">
+                <h3 className=" leading-none text-black text-[1.8rem] md:text-[3.2rem] font-extrabold mb-8">
                   {title}
                 </h3>
               </div>
