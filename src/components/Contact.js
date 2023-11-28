@@ -60,7 +60,7 @@ function Contact() {
   };
   return (
     <section id="contact" 
-    className="flex flex-col items-center justify-center mx-2 sm:mx:2 md:mx-4 h-screen">
+    className="flex flex-col items-center justify-center px-2 sm:px:2 md:px-4 h-screen  bg-customBlack opacity-[99%]">
       
       <div className=" w-fit p-4 flex flex-col items-end mb-10">
       <h1 className="w-full text-[5rem] sm:text-[5rem] md:text-[6rem] text-end tracking-tighter lg:text-[9rem] leading-none font-body font-extrabold ">

@@ -62,7 +62,7 @@ function Projects({ getRandomColor }) {
       title: "Boolebots",
       label: "collaboration",
       description:
-        "BooleBots is a collaboration project, this fun game has it's foundation in boolean logic.",
+        "BooleBots is a collaboration project. This fun game has it's foundation in boolean logic.",
       image: "screens-boolebots.gif",
       githubLink: "https://github.com/chingu-voyages/v44-tier2-team-25",
       demoLink: "https://boolebots25.netlify.app",
@@ -94,7 +94,7 @@ function Projects({ getRandomColor }) {
   return (
     <section
       id="projects"
-      className="flex flex-col min-h-screen items-end justify-center pt-4 m-6"
+      className="flex flex-col min-h-screen items-end justify-center p-8 bg-customBlack opacity-100"
     >
       <div className="w-full mb-2 md:mb-8 lg:mb-0">
         <h1 className="whitespace-nowrap h-fit self-start text-[5rem] sm:text-[5rem] md:text-[8rem] lg:text-[9rem] text-end tracking-tighter pb-6 leading-none font-body font-extrabold">
@@ -102,7 +102,7 @@ function Projects({ getRandomColor }) {
         </h1>
       </div>
 
-      <div className="flex relative flex-col h-full justify-center w-full max-w-5xl mt-2">
+      <div className="flex relative flex-col h-full justify-center w-full max-w-5xl mt-2 overflow-auto">
       {projects.map((project, index) => (
   <motion.div
     key={project.id}

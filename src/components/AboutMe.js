@@ -19,7 +19,7 @@ function AboutMe({ getRandomColor }) {
   return (
     <section
       id="about"
-      className="flex flex-col justify-center items-start w-full h-screen p-4 md:p-8"
+      className="flex flex-col justify-center items-start w-full h-screen p-4 md:p-8  bg-customBlack opacity-[99%]"
     >
       <NameBanner />
       <div className="my-4 text-left max-w-md sm:max-w-lg md:max-w-xl lg:max-w-3xl overflow-auto">

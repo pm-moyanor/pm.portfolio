@@ -27,7 +27,7 @@ const TechStack = ({ getRandomColor }) => {
 /// 
 
   return (
-    <section className="flex flex-col justify-center h-screen overflow-hidden w-full">
+    <section className="flex flex-col justify-center h-screen overflow-hidden w-full  bg-customBlack opacity-[99%]">
       <div className="flex justify-between items-end mr-8 ">
         <div className="w-full">
           <h1 className="w-full text-[5rem] sm:text-[5rem] md:text-[8rem] text-end tracking-tighter lg:text-[9rem] leading-none font-body font-extrabold whitespace-break-spaces">

@@ -8,7 +8,6 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import { motion } from "framer-motion";
 
-
 const getRandomColor = () => {
   const baseRgb = [238, 49, 49];
   const variationRange = 120;
@@ -33,7 +32,6 @@ const pages = [
   { id: "contact", component: <Contact /> },
 ];
 
-
 function App() {
   const scrollRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -52,13 +50,12 @@ function App() {
       }
     );
 
-
-    const currentRef = scrollRef.current; 
+    const currentRef = scrollRef.current;
 
     if (currentRef) {
       observer.observe(currentRef);
     }
-  
+
     return () => {
       if (currentRef) {
         observer.unobserve(currentRef);
@@ -78,25 +75,15 @@ function App() {
   };
 
   return (
-    <div className="App bg-customBlack">
+    <div className="App">
       <Header pages={pages} scrollToSection={scrollToSection} />
 
       <main
         ref={scrollRef}
-        className="scroll-container min-h-screen h-screen w-full bg-customBlack snap-mandatory snap-y  overflow-scroll"
+        className="scroll-container min-h-screen h-screen w-full snap-proximity snap-y overflow-scroll"
       >
-        {pages.map((page,index) => (
-          <motion.div
-            id={page.id}
-            key={page.id}
-            initial={isVisible ? { opacity: 0, y: 50 } : {}}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            exit={isVisible ? { opacity: 0, y: -50 } : {}}
-            transition={{ duration: 0.5, delay: isVisible ? index * 0.1 : 0 }}
-            className="min-h-screen snap-start"
-          >
-            {page.component}
-          </motion.div>
+        {pages.map((page, index) => (
+          <div className="min-h-screen snap-start"> {page.component}</div>
         ))}
       </main>
     </div>
