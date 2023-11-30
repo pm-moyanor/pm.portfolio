@@ -22,7 +22,10 @@ const Header = ({ pages, scrollToSection }) => {
             >
               <a
                 href={`#${page.id}`}
-                onClick={() => scrollToSection(`#${page.id}`)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(`#${page.id}`)}
+                }
               >
                 {page.id.charAt(0).toUpperCase() + page.id.slice(1)}
               </a>

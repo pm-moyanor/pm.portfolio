@@ -38,7 +38,7 @@ function App() {
     { id: "projects", component: <Projects activeSection={activeSection} getRandomColor={getRandomColor} /> },
     { id: "contact", component: <Contact /> },
   ];
-  
+
    useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -68,6 +68,7 @@ function App() {
     };
   }, [scrollRef]);
 
+  
   const scrollToSection = (targetId) => {
     const targetSection = document.querySelector(targetId);
 

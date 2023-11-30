@@ -1,12 +1,11 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 const techStackString =
   "Javascript  HTML5 CSS Sass Bootstrap React TailwindCSS Figma GitHub Git";
 
-const TechStack = ({activeSection, getRandomColor }) => {
+const TechStack = ({ activeSection, getRandomColor }) => {
   const fullText = techStackString.repeat(50);
-
 
   const enterFromRightVariants = {
     initial: {
@@ -26,7 +25,6 @@ const TechStack = ({activeSection, getRandomColor }) => {
   };
   useEffect(() => {
     const stopAnimations = () => {
-
       const animatingElements = document.querySelectorAll(".motion-effect");
       animatingElements.forEach((element) => {
         motion.cancel(element);
@@ -38,9 +36,11 @@ const TechStack = ({activeSection, getRandomColor }) => {
     }
   }, [activeSection]);
 
-
   return (
-    <section className="flex flex-col justify-center h-screen overflow-hidden w-full z-30">
+    <section
+      id="techstack"
+      className="flex flex-col justify-center h-screen overflow-hidden w-full z-30"
+    >
       <div className="flex justify-between items-end mr-8 ">
         <div className="w-full">
           <h1 className="w-full text-[5rem] sm:text-[5rem] md:text-[8rem] text-end tracking-tighter lg:text-[9rem] leading-none font-body font-extrabold whitespace-break-spaces">
@@ -79,12 +79,15 @@ const TechStack = ({activeSection, getRandomColor }) => {
       >
         <span className=" text-[13vh] sm:text-[13vh] md:text-[25vh] font-extrabold font-body tracking-tighter">
           {fullText.split(" ").map((word, index) => {
-
             return (
-            <motion.span key={`${word}/slide/${index}`} style={{ color: getRandomColor() }}>
-              {word}{" "}
-            </motion.span>
-          )})}
+              <motion.span
+                key={`${word}/slide/${index}`}
+                style={{ color: getRandomColor() }}
+              >
+                {word}{" "}
+              </motion.span>
+            );
+          })}
         </span>
       </motion.div>
     </section>
