@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       colors: {
         customRed: "#ee3131",
-        customBlack: "#171716",
+        customBlack: "#131318",
         customYellow:'#E5C43C'
       },
       after: ["hover"],

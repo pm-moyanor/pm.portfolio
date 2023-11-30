@@ -10,19 +10,23 @@ const Header = ({ pages, scrollToSection }) => {
   };
 
   return (
-    <nav className=" bg-customBlack text-slate-300 py-6 h-18 flex justify-center items-center w-full p-2">
+    <nav className="fixed text-slate-300 bg-transparent py-6 h-18 flex justify-center items-center w-full p-2">
       <div className="container flex items-center justify-between mx-2 w-full lg:w-fit">
         {/* large screen */}
         <ul className=" hidden sm:hidden lg:flex items-center justify-center space-x-8 lg:space-x-12">
           {pages.map((page) => (
-            <li key={page.id}>
+            <motion.li
+              key={page.id}
+              whileHover={{ borderBottom: "2px solid gray" }}
+              style={{ borderBottom: "2px solid transparent" }}
+            >
               <a
                 href={`#${page.id}`}
                 onClick={() => scrollToSection(`#${page.id}`)}
               >
                 {page.id.charAt(0).toUpperCase() + page.id.slice(1)}
               </a>
-            </li>
+            </motion.li>
           ))}
           <div className="hidden lg:flex items-center justify-center space-x-4">
             <motion.a
@@ -56,22 +60,22 @@ const Header = ({ pages, scrollToSection }) => {
         </div>
 
         {/* Mobile */}
-        <AnimatePresence >
-        {isOpen && (
-      
+        <AnimatePresence>
+          {isOpen && (
             <motion.div
               key="mobile-menu"
               initial={{ opacity: 0, x: "100%" }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
               transition={{ duration: 0.4 }}
-              className="lg:hidden fixed top-0 right-0 w-full h-full flex items-center justify-center bg-customBlack z-40"
+              className="lg:hidden fixed top-0 right-0 w-full h-full flex items-center justify-center bg-customBlack z-500"
               onClick={toggleMenu}
             >
               <div className="flex flex-col items-center ">
                 {pages.map((page) => (
-                  <a
+                  <motion.a
                     key={page.id}
+                    whileHover={{ scale: 1.1 }}
                     href={`#${page.id}`}
                     onClick={() => {
                       scrollToSection(`#${page.id}`);
@@ -80,7 +84,7 @@ const Header = ({ pages, scrollToSection }) => {
                     className="text-3xl py-2"
                   >
                     {page.id.charAt(0).toUpperCase() + page.id.slice(1)}
-                  </a>
+                  </motion.a>
                 ))}
                 {/* Social Icons */}
                 <div className="flex items-end justify-around w-20 mt-5 z-30">
@@ -103,10 +107,8 @@ const Header = ({ pages, scrollToSection }) => {
                 </div>
               </div>
             </motion.div>
-       
-        )
-        }
-           </AnimatePresence>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

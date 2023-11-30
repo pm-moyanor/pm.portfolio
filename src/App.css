@@ -30,15 +30,34 @@ body {
   font-family: "Poppins", sans-serif;
   color: #fff;
   box-sizing: border-box;
-  background-image: url("../public/background-pattern.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   position: relative;
   width: 100vw;
   height: 100%;
 }
 
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -60;
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 
 
+
+.overlay {
+  position: absolute;
+  z-index: 0;
+  object-fit: contain;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 18, 0.99);
+
+}

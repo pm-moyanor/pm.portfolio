@@ -6,7 +6,8 @@ import AboutMe from "./components/AboutMe";
 import TechStack from "./components/TechStack";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import { motion } from "framer-motion";
+
+
 
 const getRandomColor = () => {
   const baseRgb = [238, 49, 49];
@@ -67,21 +68,33 @@ function App() {
     const targetSection = document.querySelector(targetId);
 
     if (targetSection) {
-      scrollRef.current.scrollTo({
-        top: targetSection.offsetTop,
-        behavior: "smooth",
-      });
+      if (targetSection.scrollHeight > window.innerHeight) {
+        targetSection.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      } else {
+        scrollRef.current.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
   return (
     <div className="App">
-      <Header pages={pages} scrollToSection={scrollToSection} />
+      <div className="background-overlay">
+        <img src="./background-pattern.jpg" alt="background-pattern" className="background-image w-full h-full" />
+        <div className="overlay"></div>
+      </div>
+
 
       <main
         ref={scrollRef}
-        className="scroll-container min-h-screen h-screen w-full snap-proximity snap-y overflow-scroll"
+        className="scroll-container min-h-screen h-screen w-full snap-mandatory snap-y overflow-scroll"
       >
+        <Header pages={pages} scrollToSection={scrollToSection} />
         {pages.map((page, index) => (
           <div className="min-h-screen snap-start"> {page.component}</div>
         ))}

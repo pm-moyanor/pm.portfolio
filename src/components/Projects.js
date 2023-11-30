@@ -24,6 +24,8 @@ const AccordionItem = ({ project, expanded, toggleExpand, getRandomColor }) => {
   );
 };
 
+
+
 function Projects({ getRandomColor }) {
   const [expanded, setExpanded] = useState(false);
 
