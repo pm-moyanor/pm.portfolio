@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
 
@@ -26,7 +26,7 @@ const AccordionItem = ({ project, expanded, toggleExpand, getRandomColor }) => {
 
 
 
-function Projects({ getRandomColor }) {
+function Projects({ activeSection,getRandomColor }) {
   const [expanded, setExpanded] = useState(false);
 
   const projects = [
@@ -70,6 +70,15 @@ function Projects({ getRandomColor }) {
       demoLink: "https://boolebots25.netlify.app",
     },
   ];
+
+  useEffect(() => {
+    if (!activeSection || activeSection !== "projects") {
+      const animatingCards = document.querySelectorAll(".motion-effect");
+      animatingCards.forEach((element) => {
+        motion.cancel(element);
+      });
+    }
+  }, [activeSection]);
 
   const toggleExpand = (projectId) => {
     setExpanded((prevExpanded) =>

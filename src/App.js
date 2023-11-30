@@ -26,17 +26,19 @@ const getRandomColor = () => {
   return randomColor;
 };
 
-const pages = [
-  { id: "about", component: <AboutMe getRandomColor={getRandomColor} /> },
-  { id: "techstack", component: <TechStack getRandomColor={getRandomColor} /> },
-  { id: "projects", component: <Projects getRandomColor={getRandomColor} /> },
-  { id: "contact", component: <Contact /> },
-];
+
 
 function App() {
    const scrollRef = useRef(null);
    const [activeSection, setActiveSection] = useState(null);
 
+   const pages = [
+    { id: "about", component: <AboutMe getRandomColor={getRandomColor} /> },
+    { id: "techstack", component: <TechStack activeSection={activeSection} getRandomColor={getRandomColor} /> },
+    { id: "projects", component: <Projects activeSection={activeSection} getRandomColor={getRandomColor} /> },
+    { id: "contact", component: <Contact /> },
+  ];
+  
    useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

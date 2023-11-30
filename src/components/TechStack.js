@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { motion } from "framer-motion";
 
 const techStackString =
   "Javascript  HTML5 CSS Sass Bootstrap React TailwindCSS Figma GitHub Git";
 
-const TechStack = ({ getRandomColor }) => {
+const TechStack = ({activeSection, getRandomColor }) => {
   const fullText = techStackString.repeat(50);
 
 
@@ -24,7 +24,20 @@ const TechStack = ({ getRandomColor }) => {
       },
     }),
   };
- 
+  useEffect(() => {
+    const stopAnimations = () => {
+
+      const animatingElements = document.querySelectorAll(".motion-effect");
+      animatingElements.forEach((element) => {
+        motion.cancel(element);
+      });
+    };
+
+    if (!activeSection || activeSection !== "techstack") {
+      stopAnimations();
+    }
+  }, [activeSection]);
+
 
   return (
     <section className="flex flex-col justify-center h-screen overflow-hidden w-full">
