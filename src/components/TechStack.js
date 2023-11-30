@@ -7,7 +7,7 @@ const techStackString =
 const TechStack = ({ getRandomColor }) => {
   const fullText = techStackString.repeat(50);
 
-  ///
+
   const enterFromRightVariants = {
     initial: {
       opacity: 0,
@@ -24,7 +24,7 @@ const TechStack = ({ getRandomColor }) => {
       },
     }),
   };
-/// 
+ 
 
   return (
     <section className="flex flex-col justify-center h-screen overflow-hidden w-full">

@@ -1,4 +1,4 @@
-// App.js
+
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
@@ -34,33 +34,35 @@ const pages = [
 ];
 
 function App() {
-  const scrollRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+   const scrollRef = useRef(null);
+   const [activeSection, setActiveSection] = useState(null);
 
-  useEffect(() => {
+   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible(true);
+            setActiveSection(entry.target.id);
           }
         });
       },
       {
-        threshold: 1,
+        threshold: 0.5,
+        root: scrollRef.current,
+        rootMargin: "0px",
       }
     );
 
-    const currentRef = scrollRef.current;
+    const sections = document.querySelectorAll(".snap-start");
 
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
     };
   }, [scrollRef]);
 
