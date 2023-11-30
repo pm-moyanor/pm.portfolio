@@ -61,3 +61,7 @@ body {
   background-color: rgba(10, 10, 18, 0.99);
 
 }
+
+.nav{
+  z-index: 999;
+}

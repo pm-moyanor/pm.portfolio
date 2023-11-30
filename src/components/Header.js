@@ -10,7 +10,7 @@ const Header = ({ pages, scrollToSection }) => {
   };
 
   return (
-    <nav className="fixed text-slate-300 bg-transparent py-6 h-18 flex justify-center items-center w-full p-2">
+    <nav className="nav fixed text-slate-300 bg-transparent py-6 h-18 flex justify-center items-center w-full p-2">
       <div className="container flex items-center justify-between mx-2 w-full lg:w-fit">
         {/* large screen */}
         <ul className=" hidden sm:hidden lg:flex items-center justify-center space-x-8 lg:space-x-12">
@@ -49,7 +49,7 @@ const Header = ({ pages, scrollToSection }) => {
         </ul>
 
         {/*  Small Screen */}
-        <div className=" fixed top-6 right-6 lg:hidden z-50 w-full flex justify-end">
+        <div className=" fixed top-6 right-6 lg:hidden z-120 w-full flex justify-end">
           <motion.button
             onClick={toggleMenu}
             whileHover={{ scale: 1.2 }}
@@ -64,11 +64,12 @@ const Header = ({ pages, scrollToSection }) => {
           {isOpen && (
             <motion.div
               key="mobile-menu"
+              
               initial={{ opacity: 0, x: "100%" }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
               transition={{ duration: 0.4 }}
-              className="lg:hidden fixed top-0 right-0 w-full h-full flex items-center justify-center bg-customBlack z-500"
+              className="mobile-menu lg:hidden fixed top-0 right-0 w-full h-full flex items-center justify-center bg-customBlack"
               onClick={toggleMenu}
             >
               <div className="flex flex-col items-center ">

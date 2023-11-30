@@ -97,7 +97,7 @@ function Contact() {
       <form
         ref={form}
         onSubmit={handleSubmit}
-        className="w-4/5 flex flex-col justify-center bg-customBlack bg-opacity-92 max-w-3xl min-w-2xl p-6 sm:p-6 md:p-10 lg:p-16 relative h-1/2 mx-6"
+        className="w-4/5 flex flex-col justify-center bg-customBlack bg-opacity-95 max-w-3xl min-w-2xl p-6 sm:p-6 md:p-10 lg:p-16 relative h-1/2 mx-6"
       >
         <div className="w-full mb-2">
           <label htmlFor="name" className="sr-only">
