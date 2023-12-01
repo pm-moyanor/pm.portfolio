@@ -56,7 +56,7 @@ const Header = ({ pages, scrollToSection }) => {
           <motion.button
             onClick={toggleMenu}
             whileHover={{ scale: 1.2 }}
-            className="text-gray-300 text-2xl text-right"
+            className="text-gray-300 text-xl text-right"
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </motion.button>

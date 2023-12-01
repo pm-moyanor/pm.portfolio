@@ -68,7 +68,7 @@ function App() {
     };
   }, [scrollRef]);
 
-  
+
   const scrollToSection = (targetId) => {
     const targetSection = document.querySelector(targetId);
 
@@ -101,7 +101,7 @@ function App() {
       >
         <Header pages={pages} scrollToSection={scrollToSection} />
         {pages.map((page, index) => (
-          <div className="min-h-screen snap-start"> {page.component}</div>
+          <div className="min-h-screen snap-start my-4 md:py-2"> {page.component}</div>
         ))}
       </main>
     </div>
