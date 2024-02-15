@@ -37,7 +37,7 @@ function NameBanner({ getRandomColor }) {
               whileInView="animate"
               custom={index}
               style={{ display: 'inline' }}
-              className="text-[4.8rem] sm:text-[4.8rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-museoModerno font-normal tracking-tight"
+              className="text-[4.8rem] sm:text-[4.8rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-museoModerno font-[500] tracking-tighter"
             >
 {char}
             </motion.p>
@@ -52,7 +52,7 @@ function NameBanner({ getRandomColor }) {
               whileInView="animate"
               custom={index}
               style={{ display: 'inline-block' }}
-              className="text-[4.6rem] sm:text-[4.6rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-museoModerno font-normal tracking-tight"
+              className="text-[4.6rem] sm:text-[4.6rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-museoModerno font-[500] tracking-tighter"
             >
     {char}
             </motion.span>

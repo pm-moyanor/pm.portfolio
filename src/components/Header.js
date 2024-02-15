@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaBars, FaTimes } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaBars, FaTimes ,FaFilePdf} from "react-icons/fa";
 
 const Header = ({ pages, scrollToSection }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,8 +24,8 @@ const Header = ({ pages, scrollToSection }) => {
                 href={`#${page.id}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection(`#${page.id}`)}
-                }
+                  scrollToSection(`#${page.id}`);
+                }}
               >
                 {page.id.charAt(0).toUpperCase() + page.id.slice(1)}
               </a>
@@ -48,6 +48,16 @@ const Header = ({ pages, scrollToSection }) => {
             >
               <FaLinkedin size={20} className="text-customRed" />
             </motion.a>
+            <motion.a
+                    href="Paula_Moyano-UI-developer.pdf" // Replace with your actual PDF file path
+                    target="_blank"
+                    rel="noopener noreferrer"
+                 
+                    whileHover={{ scale: 1.5 }}
+                  >
+                    <FaFilePdf size={20} className="text-customRed mr-2" />
+                
+                  </motion.a>
           </div>
         </ul>
 
@@ -67,7 +77,6 @@ const Header = ({ pages, scrollToSection }) => {
           {isOpen && (
             <motion.div
               key="mobile-menu"
-              
               initial={{ opacity: 0, x: "100%" }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
@@ -107,6 +116,16 @@ const Header = ({ pages, scrollToSection }) => {
                     whileHover={{ scale: 1.5 }}
                   >
                     <FaLinkedin size={26} className="text-customRed mr-2" />
+                  </motion.a>
+                  <motion.a
+                    href="Paula_Moyano-UI-developer.pdf" // Replace with your actual PDF file path
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    
+                    whileHover={{ scale: 1.5 }}
+                  >
+                    <FaFilePdf size={20} className="text-customRed mr-2" />
+                
                   </motion.a>
                 </div>
               </div>

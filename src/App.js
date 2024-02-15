@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 
 
 
+
 const getRandomColor = () => {
   const baseRgb = [238, 49, 49];
   const variationRange = 120;
@@ -99,6 +100,7 @@ function App() {
         ref={scrollRef}
         className="scroll-container min-h-screen h-screen w-full snap-mandatory snap-y overflow-scroll"
       >
+     
         <Header pages={pages} scrollToSection={scrollToSection} />
         {pages.map((page, index) => (
           <div className="min-h-screen snap-start my-4 md:py-2"> {page.component}</div>
